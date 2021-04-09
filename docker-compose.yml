@@ -3,6 +3,7 @@ version: "3.7"
 services:
     alice:
         image: jlesage/firefox
+        container_name: mitm_alice
         restart: always
         volumes:
             - /dev/shm:/dev/shm
@@ -12,6 +13,7 @@ services:
             - mitm
     bob:
         image: aikain/simplehttpserver:0.1
+        container_name: mitm_bob
         restart: always
         volumes:
             - ./bob_files:/var/www
@@ -20,6 +22,7 @@ services:
     eve:
         privileged: true
         build: .
+        container_name: mitm_eve
         volumes:
             - ./eve_files:/olicyber
         sysctls:
