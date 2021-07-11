@@ -54,7 +54,7 @@ $ mitmproxy -m transparent
 10. Reload the browser page: the honest page will show again, but mitmproxy will show that the request passed through Eve
 11. Now shut down the proxy and activate it again, this time with the script that modifies the contents of the page:
 ```
-$ mitmproxy -m trasnparent -s /olicyber/proxy.py
+$ mitmproxy -m transparent -s /olicyber/proxy.py
 ```
 12. Reload the browser page: the attacker has changed the contents of the website.
 13. To shut down everything use the `del_iptables_rul.sh` script in the `olicyber` folder to remove the iptables rule and turn off the two arpspoof instances
